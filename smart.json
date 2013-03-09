@@ -1,0 +1,10 @@
+{
+  "meteor": {
+    "tag": "v0.5.7"
+  },
+  "packages": {
+    "filer": {
+      "git": "https://github.com/limeyd/meteor-filer.git"
+    }
+  }
+}
