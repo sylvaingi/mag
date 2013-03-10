@@ -1,9 +1,7 @@
 (function(){
-  var require = __meteor_bootstrap__.require;
-
+  var fs = MAG.require("fs");
+  var Future = MAG.require("fibers/future");
   var im = NodeModules.require("imagemagick");
-  var fs = require("fs");
-  var Future = require("fibers/future");
 
   var filer = new Filer({
     uploadDir: MAG.uploadsFolder,
@@ -37,15 +35,15 @@
     //Immediately invalidate current token
     MAG.users.generateUploadToken(user);
 
-    var userNameSlug = slugify(user.profile.name);
-    var uploadFolder = MAG.imagesFolder + userNameSlug + "/";
+    //var userNameSlug = slugify(user.profile.name);
+    /*var uploadFolder = MAG.imagesFolder + user._id + "/";
     if(!fs.existsSync(uploadFolder)){
       fs.mkdirSync(uploadFolder, 0755);
-    }
+    }*/
 
     _.each(files, function(file){
       try {
-        processFileSync(file, uploadFolder);
+        processFileSync(file, MAG.uploadsFolder);
         addPictureToUserGallery(file, user._id);
       } catch(e){
         console.log("Error while processing file ", file.path, e);
@@ -70,8 +68,8 @@
     };
   }
 
-  function processFileSync(file, destFilePrefix){
-    var baseName = destFilePrefix + file.hash + "-";
+  function processFileSync(file, destFolder){
+    var baseName = destFolder + file.hash + "-";
     var original = baseName + "original.jpg";
 
     fs.renameSync(file.path, original);
@@ -79,7 +77,7 @@
     var futures = [];
     var resize = Future.wrap(im.resize);
 
-    _.each(MAG.imageWidths, function(w){
+    _.each(MAG.imagesWidths, function(w){
       futures.push(resize({
         srcPath: original,
         dstPath: baseName + w + ".jpg",

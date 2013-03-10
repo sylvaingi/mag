@@ -1,0 +1,18 @@
+<template name="galleryList">
+    <ul>
+        {{#each galleries}}
+            {{> gallery}}
+        {{/each}}
+    </ul>  
+</template>
+
+<template name="gallery">
+    <li class="gallery">
+        <h2>{{creator}}</h2>
+        {{#isolate}}
+        {{#each samples}}
+            {{picture this "300"}}
+        {{/each}}
+        {{/isolate}}
+    </li>  
+</template>
