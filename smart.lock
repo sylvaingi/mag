@@ -7,15 +7,15 @@
   "dependencies": {
     "basePackages": {
       "filer": {
-        "git": "https://github.com/limeyd/meteor-filer.git",
+        "git": "https://github.com/sylvaingi/meteor-filer.git",
         "branch": "master"
       }
     },
     "packages": {
       "filer": {
-        "git": "https://github.com/limeyd/meteor-filer.git",
+        "git": "https://github.com/sylvaingi/meteor-filer.git",
         "branch": "master",
-        "commit": "c757b88786ec6eb0faa177e92483bb113e77586a"
+        "commit": "e7995c7fe6170e2c9ea00c6cf0ef11d10b0964fc"
       },
       "node-modules": {
         "git": "https://github.com/possibilities/meteor-node-modules.git",

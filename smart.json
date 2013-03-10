@@ -4,7 +4,7 @@
   },
   "packages": {
     "filer": {
-      "git": "https://github.com/limeyd/meteor-filer.git"
+      "git": "https://github.com/sylvaingi/meteor-filer.git"
     }
   }
 }
