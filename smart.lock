@@ -9,7 +9,9 @@
       "filer": {
         "git": "https://github.com/sylvaingi/meteor-filer.git",
         "branch": "master"
-      }
+      },
+      "router": {},
+      "HTML5-History-API": {}
     },
     "packages": {
       "filer": {
@@ -17,10 +19,25 @@
         "branch": "master",
         "commit": "fd2bcbd9fabc75ce543cb7b6b973a8e655ca9a61"
       },
+      "router": {
+        "git": "https://github.com/tmeasday/meteor-router.git",
+        "tag": "v0.4.3",
+        "commit": "0691a6e2c4c249ce7d00cd6dc7ad27e1c7330a31"
+      },
+      "HTML5-History-API": {
+        "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
+        "tag": "v0.1.2",
+        "commit": "72333bfa71ae1ca75243085e83200eef40818088"
+      },
       "node-modules": {
         "git": "https://github.com/possibilities/meteor-node-modules.git",
         "tag": "v0.0.5",
         "commit": "d502e5091759073a6baed856fadd93012749842d"
+      },
+      "page-js-ie-support": {
+        "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
+        "tag": "v1.3.5",
+        "commit": "b99ed8380aefd10b2afc8f18d9eed4dd0d8ea9cb"
       }
     }
   }

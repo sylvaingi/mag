@@ -5,6 +5,8 @@
   "packages": {
     "filer": {
       "git": "https://github.com/sylvaingi/meteor-filer.git"
-    }
+    },
+    "router": {},
+    "HTML5-History-API": {}
   }
 }

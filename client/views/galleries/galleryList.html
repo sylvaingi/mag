@@ -1,0 +1,16 @@
+<template name="galleryList">
+    <ul>
+        {{#each galleries}}
+            {{> galleryThumb}}
+        {{/each}}
+    </ul>  
+</template>
+
+<template name="galleryThumb">
+    <li class="gallery-thumb">
+        <a href="/{{_id}}">
+            {{picture sample "300"}}
+            <h2>{{creator}}</h2>
+        </a>    
+    </li>  
+</template>

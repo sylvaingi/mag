@@ -5,7 +5,7 @@
         }
     });
 
-    Template.gallery.helpers({
+    Template.galleryThumb.helpers({
         creator: function(){
             return Meteor.users.findOne({_id: this.userId}).profile.name;
         },
