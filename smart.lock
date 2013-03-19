@@ -1,8 +1,8 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "tag": "v0.5.7",
-    "commit": "7b1bf062b9545466c7adc2d39a82a92994ccd3ba"
+    "tag": "v0.5.9",
+    "commit": "45fef52095bb6726cc1b2f05008ad891c446100a"
   },
   "dependencies": {
     "basePackages": {
@@ -15,7 +15,7 @@
       "filer": {
         "git": "https://github.com/sylvaingi/meteor-filer.git",
         "branch": "master",
-        "commit": "e7995c7fe6170e2c9ea00c6cf0ef11d10b0964fc"
+        "commit": "fd2bcbd9fabc75ce543cb7b6b973a8e655ca9a61"
       },
       "node-modules": {
         "git": "https://github.com/possibilities/meteor-node-modules.git",
