@@ -6,8 +6,7 @@
 
     MAG.Pictures.addPicture = function(name, hash, galleryId){
         if(MAG.Pictures.findOne({hash: hash, galleryId: galleryId})){
-            console.log("Picture with hash "+hash+" already exists in gallery "+galleryId);
-            return;
+            throw new Meteor.Error("Picture with hash "+hash+" already exists in gallery "+galleryId);
         }
 
         var destFolder = MAG.imagesFolder + "/" + galleryId + "/";

@@ -10,8 +10,8 @@
             return Meteor.users.findOne({_id: this.userId}).profile.name;
         },
 
-        samples: function(){
-            return MAG.Pictures.find({galleryId: this._id});
+        sample: function(){
+            return MAG.Pictures.findOne({galleryId: this._id}, {sort: {createdAt: 1}});
         }
     });
 }());
