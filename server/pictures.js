@@ -2,6 +2,8 @@
     var fs = MAG.require("fs");
     var glob = NodeModules.require("glob");
 
+    MAG.Pictures._ensureIndex({hash: 1, galleryId: 1}, {unique: true});
+
     MAG.Pictures.addPicture = function(name, hash, galleryId){
         if(MAG.Pictures.findOne({hash: hash, galleryId: galleryId})){
             console.log("Picture with hash "+hash+" already exists in gallery "+galleryId);

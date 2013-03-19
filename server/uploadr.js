@@ -69,7 +69,7 @@
   }
 
   function processFileSync(file, destFolder){
-    var baseName = destFolder + file.hash + "-";
+    var baseName = destFolder + "/" + file.hash + "-";
     var original = baseName + "original.jpg";
 
     fs.renameSync(file.path, original);
