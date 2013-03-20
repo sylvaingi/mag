@@ -3,43 +3,30 @@
   var Future = MAG.require("fibers/future");
   var im = NodeModules.require("imagemagick");
 
-  var filer = new Filer({
-    uploadDir: MAG.uploadsFolder,
-    hash: "sha1"
+  Meteor.Router.start({
+    bodyParser: {
+      uploadDir: MAG.uploadsFolder,
+      hash: "sha1"
+    }
   });
 
-  filer.register("/upload");
-
-  filer.events({
-    "end": onUploadEnd
-  });
-
-  function onUploadEnd(data){
+  Meteor.Router.add('/upload', function() {
+    var files = this.request.files;
+    var uploadToken = this.request.body.upload_token;
     var failedFiles = [];
-
-    var files = data.files;
-    var uploadToken = data.fields.upload_token;
 
     var user = MAG.users.getUserFromUploadToken(uploadToken);
     if(!user){
       console.log("Error, invalid token");
       deleteFiles(files);
-      return {
-        statusCode: 403,
-        info: {
-          error: "Invalid token"
-        }
-      };
+      return [
+        403,
+        "Invalid token"
+      ];
     }
 
     //Immediately invalidate current token
     MAG.users.generateUploadToken(user);
-
-    //var userNameSlug = slugify(user.profile.name);
-    /*var uploadFolder = MAG.imagesFolder + user._id + "/";
-    if(!fs.existsSync(uploadFolder)){
-      fs.mkdirSync(uploadFolder, 0755);
-    }*/
 
     _.each(files, function(file){
       try {
@@ -60,13 +47,13 @@
 
     deleteFiles(failedFiles);
 
-    return {
-      statusCode : statusCode,
-      info: {
+    return [
+      statusCode,
+      JSON.stringify({
         failedUploads: _.pluck(failedFiles, "name")
-      }
-    };
-  }
+      })
+    ];
+  });
 
   function processFileSync(file, destFolder){
     var baseName = destFolder + "/" + file.hash + "-";
