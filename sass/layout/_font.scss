@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Lobster13Regular';
+    src: url('../font/Lobster_1.3-webfont.eot');
+    src: url('../font/Lobster_1.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Lobster_1.3-webfont.svg#Lobster13Regular') format('svg'),
+         url('../font/Lobster_1.3-webfont.woff') format('woff'),
+         url('../font/Lobster_1.3-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, .h1{
+    font-size: em(36px);
+}
+
+h2, .h2{
+    font-size: em(30px);
+}
+
+h3, .h3{
+    font-size: em(24px);
+}
+
+h4, .h4{
+    font-size: em(16px);
+}
+
+h5, .h5{
+    font-size: em(14px);
+    font-style: italic;
+}
+
+h5, .h5{
+    font-size: em(14px);
+    font-weight: bold;
+}
+
+p, .p{
+    font-size: em(12px);
+    line-height: em(18px);
+}
+
+.caps{ text-transform: uppercase; }
+.small-caps{ font-variant: small-caps; }
+
+.aleft{ text-align: left; }
+.acenter{ text-align: center; }
+.aright{ text-align: right; }
+
+.lobster{
+    font-family: 'Lobster13Regular', Arial, helvetica, sans-serif;
+}
+
+a{
+    color: $color-1;
+    &:hover,
+    &:active,
+    &:focus{
+        color: $color-2;
+    }
+}
+

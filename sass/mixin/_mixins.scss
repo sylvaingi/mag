@@ -1,0 +1,8 @@
+@for $i from 1 through 30 {
+	.mt-album:nth-child(#{$i}) {
+		@include animation-delay($i * 0.1s);
+	}
+	.mt-photo:nth-child(#{$i}) {
+		@include animation-delay($i * 0.1s);
+	}
+} 

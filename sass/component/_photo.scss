@@ -1,0 +1,8 @@
+.mt-photo {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 25px;
+    @extend .fadeInRight;
+}

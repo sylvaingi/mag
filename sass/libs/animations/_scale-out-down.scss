@@ -1,0 +1,20 @@
+@include keyframes (scaleOutDown) {
+    0% {
+        @include scale(1);
+        opacity: 1;
+    }  
+    30%{
+        opacity: 0.1;
+        
+    } 
+    100% {
+        @include scale(0.9);
+        opacity: 0;
+    }
+}
+
+.scaleOutDown {
+    @extend .animated;
+    @include animation-name(scaleOutDown);
+    @include animation-duration(0.8s);
+}

@@ -1,4 +1,5 @@
 images
 uploads
 
+.sass-cache
 *.sublime-*

@@ -1,0 +1,16 @@
+@include keyframes (scaleInUp) {
+    0% {
+        @include scale(1.1);
+        opacity: 0;
+    }   
+    100% {
+        @include scale(1);
+        opacity: 1;
+    }
+}
+
+.scaleInUp {
+    @extend .animated;
+    @include animation-name(scaleInUp);
+    @include animation-duration(0.8s);
+}

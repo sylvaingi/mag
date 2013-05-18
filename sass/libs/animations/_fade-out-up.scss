@@ -1,0 +1,15 @@
+@include keyframes (fadeOutUp) {
+	0% {
+		opacity: 1;
+		@include transform(translateY(0));
+	}	
+	100% {
+		opacity: 0;
+		@include transform(translateY(-30px));
+	}
+}
+
+.fadeOutUp {
+	@extend .animated;
+	@include animation-name(fadeOutUp);
+}

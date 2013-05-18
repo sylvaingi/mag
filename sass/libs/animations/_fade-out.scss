@@ -1,0 +1,13 @@
+@include keyframes (fadeOut) {
+	0% {
+		opacity: 1;
+	}	
+	100% {
+		opacity: 0;
+	}
+}
+
+.fadeOut {
+	@extend .animated;
+	@include animation-name(fadeOut);
+}

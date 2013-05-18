@@ -1,0 +1,15 @@
+@include keyframes (fadeInLeft) {
+	0% {
+		opacity: 0;
+		@include transform(translateX(-30px));
+	}	
+	100% {
+		opacity: 1;
+		@include transform(translateX(0));
+	}
+}
+
+.fadeInLeft {
+	@extend .animated;
+	@include animation-name(fadeInLeft);
+}

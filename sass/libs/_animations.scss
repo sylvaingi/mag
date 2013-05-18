@@ -1,0 +1,88 @@
+@mixin perspective($p) {
+    @include experimental(perspective, $p,
+        -moz, -webkit, -o, -ms, not -khtml, official
+    );
+}
+
+@mixin perspective-origin($origin: 50%) {
+    @include experimental(perspective-origin, $origin,
+        -moz, -webkit, -o, -ms, not -khtml, official
+    );
+}
+
+@mixin animation-timing-function($name) {
+    -webkit-animation-timing-function: $name;
+    -moz-animation-timing-function: $name;
+    -ms-animation-timing-function: $name;
+    -o-animation-timing-function: $name;
+}
+
+@mixin animation-name($name) {
+    -webkit-animation-name: $name;
+    -moz-animation-name: $name;
+    -ms-animation-name: $name;
+    -o-animation-name: $name;
+}
+
+@mixin animation-fill-mode($mode) {
+    -webkit-animation-fill-mode: $mode;
+    -moz-animation-fill-mode: $mode;
+    -ms-animation-fill-mode: $mode;
+    -o-animation-fill-mode: $mode;
+}
+
+@mixin animation-duration($duration) {
+    -webkit-animation-duration: $duration;
+    -moz-animation-duration: $duration;
+    -ms-animation-duration: $duration;
+    -o-animation-duration: $duration;
+}
+
+@mixin animation-delay($delay) {
+    -webkit-animation-delay: $delay;
+    -moz-animation-delay: $delay;
+    -ms-animation-delay: $delay;
+    -o-animation-delay: $delay;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content; 
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    } 
+}
+
+.animated {
+    //@include animation-timing-function(ease-in-out);
+    @include animation-fill-mode(both);
+    @include animation-duration(0.5s);
+}
+
+@import "animations/fade-in";
+@import "animations/fade-out";
+
+@import "animations/fade-in-up";
+@import "animations/fade-out-up";
+
+@import "animations/fade-in-down";
+@import "animations/fade-out-down";
+
+@import "animations/fade-in-left";
+@import "animations/fade-out-left";
+
+@import "animations/fade-in-right";
+@import "animations/fade-out-right";
+
+@import "animations/scale-in-up";
+@import "animations/scale-out-up";
+
+@import "animations/scale-in-down";
+@import "animations/scale-out-down";

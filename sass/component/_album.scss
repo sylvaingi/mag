@@ -1,0 +1,97 @@
+.mt-album {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 240px;
+    margin: 25px;
+    @extend .fadeInRight;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background: $primary;
+
+        .mt-album-over {
+            display: block;
+            opacity: 1;
+            @include box-shadow(inset 0 0 0 1px $blackLight);
+        }
+    }
+
+    img {
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.mt-album-count {
+    height: 18px;
+    text-align: center;
+}
+
+.mt-album-name {
+    height: 40px;
+    padding: 5px;
+    text-align: center;
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: $secondary;
+
+        &.mt-photo-counter {
+            font-size: 11px;
+            font-style: italic;
+            color: $blackLight;
+        }
+    }
+}
+
+.mt-album-over {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: $whiteLight;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+}
+
+.mt-album-over-circle {
+    $width: 60px;
+    $height: 60px;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: $width;
+    height: $height;
+    margin-top: - $height / 2;
+    margin-left: - $width / 2;
+    background: $secondary;
+    @include border-radius($width/2);
+    @extend .fadeInUp;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.mt-album-eyes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+}

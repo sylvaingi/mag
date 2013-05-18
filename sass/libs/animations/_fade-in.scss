@@ -1,0 +1,13 @@
+@include keyframes (fadeIn) {
+	0% {
+		opacity: 0;
+	}	
+	100% {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	@extend .animated;
+	@include animation-name(fadeIn);
+}

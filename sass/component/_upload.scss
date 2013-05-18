@@ -1,0 +1,202 @@
+.mt-upload-content {
+	@extend .fadeInRight;
+}
+
+#mt-drop-files {
+	width: 90%;
+	height: 300px;
+	margin: 10px auto;
+	line-height: 300px;
+	text-align: center;
+	border: 1px dashed $blackLight;
+	background: $color-3;
+}
+
+.mt-upload-input {
+	margin-left: 40%;
+}
+
+#dropped-files {
+	position: relative;
+	width: 200px;
+    height: 200px;
+    margin: 25px;
+
+	.image {
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		border: 1px solid $primary;
+		background: $primary;
+		overflow: hidden;
+	}
+}
+
+#upload-button {
+	display: none;
+	position: absolute;
+	top: 87px;
+	width: 210px;
+	z-index: 10;
+
+	a {
+		padding: 10px 20px;
+		font-size: 20px;
+		font-weight: bold;
+		text-decoration: none;
+		color: $primary;
+		background-color: $color-1;
+	}
+
+	span {
+		display: block;
+		position: relative;
+		left: -14px;
+		width: 160px;
+		margin: 20px 0 0 0;
+		padding: 4px 0;
+		font-size: 1.1em;
+		text-align: center;
+		border-radius: 10px;
+		background: white;
+	}
+
+	.delete {
+		margin-left: 8px;
+		padding: 7px 6px 4px 6px;
+		font-size: 1em;
+		border-radius: 100px;
+		background: $blackLight;
+
+		&:hover {
+			background: $color-1;
+		}
+	}
+}
+
+#extra-files {
+	display: none;
+	position: relative;
+	float: left;
+
+	.number {
+		display: inline-block;
+		position: relative;
+		margin: 60px 0 0 0;
+		padding: 20px 30px;
+		font-size: 30px;
+		font-weight: bold;
+		color: $primary;
+		background: $blackLight;
+		cursor: pointer;
+
+		&:after {
+			content: " ";
+			display: block;
+			position: absolute;
+			top: 18px;
+			left: -40px;
+			border: 20px solid;
+			border-color: transparent $blackLight transparent transparent;
+		}
+	}
+
+	#file-list {
+		display: none;
+		position: absolute;
+		top: 100px;
+		left: -10px;
+		width: 250px;
+		max-height: 220px;
+		padding: 20px 0;
+		color: $color-1;
+		border: 1px solid $blackLight;
+		background: white;
+
+		ul {
+			width: 250px;
+			max-height: 200px;
+			padding: 0;
+			border-top: 1px solid #dadada;
+			list-style: none;
+			border-bottom: 1px solid $color-1 !important;
+			overflow: scroll;
+
+			li {
+				&:last-of-type {
+					border-bottom: 0 !important;
+				}
+			}
+		}
+	}
+}
+
+#uploaded-holder {
+	display: none;
+	float: left;
+	width: 700px;
+	height: 250px;
+}
+
+#loading {
+	display: none;
+	float: left;
+	width: 100%;
+	position: relative;
+}
+
+#loading-bar {
+	width: 404px;
+	height: 40px;
+	padding: 2px;
+	background: $primary;
+}
+
+.loading-color {
+	width: 0%;
+	height: 100%;
+	@include transition(all 0.1s ease-in);
+	background-color: $color-1;
+}
+
+#loading-content {
+	position: absolute;
+	top: 15px;
+	width: 405px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+#file-name-holder {
+	float: left;
+	width: 100%;
+
+	h1 {
+		margin: 0;
+		padding: 20px 0;
+		font-size: 3em;
+		text-align: center;
+		border-bottom: 1px solid #dadada;
+	}
+}
+
+#uploaded-files {
+	top: 100px;
+	min-height: 320px;
+	padding: 0;
+	color: $color-1;
+
+	li {
+		padding: 10px;
+		font-size: 1.5em;
+		font-weight: bold;
+		line-height: 25px;
+		color: $color-1;
+		border-bottom: 1px solid $blackLight;
+	}
+
+	a {
+		color: $color-1;
+	}
+}
