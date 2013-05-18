@@ -1,19 +1,17 @@
-(function(){
-    Meteor.subscribe("userData");
-    Meteor.subscribe("allUserData");
+Meteor.subscribe("userData");
+Meteor.subscribe("allUserData");
 
-    Meteor.subscribe("galleries");
-    Meteor.subscribe("pictures");
+Meteor.subscribe("galleries");
+Meteor.subscribe("pictures");
 
 
-    Meteor.Router.add({
-        "/": "galleryList",
+Meteor.Router.add({
+    "/": "galleryList",
 
-        "/:id": function(id){
-            Session.set("currentGalleryId", id);
-            return "gallery";
-        },
+    "/:id": function(id){
+        Session.set("currentGalleryId", id);
+        return "gallery";
+    },
 
-        "*": "not_found"
-    });
-}());
+    "*": "not_found"
+});

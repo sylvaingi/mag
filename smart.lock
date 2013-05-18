@@ -1,33 +1,36 @@
 {
   "meteor": {
     "git": "https://github.com/meteor/meteor.git",
-    "tag": "v0.5.9",
-    "commit": "45fef52095bb6726cc1b2f05008ad891c446100a"
+    "branch": "master",
+    "commit": "5d736d4bf0448c7db1f9b47124dfafc34a9631bb"
   },
   "dependencies": {
     "basePackages": {
-      "node-modules": {},
-      "router": {
-        "git": "https://github.com/sylvaingi/meteor-router.git",
-        "branch": "master"
-      },
-      "HTML5-History-API": {}
+      "router": {},
+      "HTML5-History-API": {},
+      "glob": {},
+      "imagemagick": {}
     },
     "packages": {
-      "node-modules": {
-        "git": "https://github.com/possibilities/meteor-node-modules.git",
-        "tag": "v0.0.5",
-        "commit": "d502e5091759073a6baed856fadd93012749842d"
-      },
       "router": {
-        "git": "https://github.com/sylvaingi/meteor-router.git",
-        "branch": "master",
-        "commit": "e95f90c9da13379317d1f3b16c65d485915dd3f9"
+        "git": "https://github.com/tmeasday/meteor-router.git",
+        "tag": "v0.5.1",
+        "commit": "32e377c7703bb119acccc859fc7296882903cbe7"
       },
       "HTML5-History-API": {
         "git": "https://github.com/tmeasday/meteor-HTML5-History-API.git",
         "tag": "v0.1.2",
         "commit": "72333bfa71ae1ca75243085e83200eef40818088"
+      },
+      "glob": {
+        "git": "https://github.com/sylvaingi/meteor-glob.git",
+        "tag": "v0.1.1",
+        "commit": "258315bcaae6a4d0594ce36d813d1a135eef7320"
+      },
+      "imagemagick": {
+        "git": "https://github.com/sylvaingi/meteor-imagemagick.git",
+        "tag": "v0.1.1",
+        "commit": "da8e0f23c2ef456ad6c591430d7898b4c787bde9"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

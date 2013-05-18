@@ -3,13 +3,13 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-preserve-inputs
 accounts-base
 accounts-ui
 accounts-facebook
 accounts-twitter
 accounts-google
 random
-HTML5-History-API
 router
-node-modules
+HTML5-History-API
+glob
+imagemagick
