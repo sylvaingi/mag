@@ -15,3 +15,16 @@ Meteor.Router.add({
 
     "*": "not_found"
 });
+
+Meteor.startup(function(){
+    $("body").niceScroll({
+        cursorborder: "",
+        cursorcolor: "#ca1974",
+        cursorborderradius: 0,
+        cursorwidth: 10,
+        scrollspeed : 100,
+        touchbehavior : true,
+        boxzoom: false,
+        vertical: true
+    });
+});
