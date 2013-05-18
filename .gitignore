@@ -1,3 +1,4 @@
-images/*
-uploads/*
-public/node_modules
+images
+uploads
+
+*.sublime-*
