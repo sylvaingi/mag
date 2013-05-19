@@ -1,11 +1,16 @@
 Template.form.events({
+  "click #mt-upload-zone": function(event,template){
+    event.preventDefault();
+    template.find("#mt-upload-files").click();
+  },
+
   "change" : function (event, template) {
     event.preventDefault();
     var files = template.find("input:file").files;
     uploadPictures(files, uploadToken());
   },
 
-  "drop": function(event){
+  "drop": function(event, template){
     event.preventDefault();
     $("#mt-upload-zone").removeClass("drag-hover");
     uploadPictures(event.dataTransfer.files, uploadToken());
@@ -39,17 +44,21 @@ function uploadPictures(files, uploadToken){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/upload', true);
 
-    /*var progressBar = template.find('progress');
+    var $uZone = $("#mt-upload-zone").hide();
+    var $uProg = $("#mt-upload-progress").show();
+    var $uProgPercent = $("#mt-upload-progress-percent").text(0);
+
     xhr.upload.onprogress = function(e) {
       if (e.lengthComputable) {
-        progressBar.value = (e.loaded / e.total) * 100;
+        var progression = (e.loaded / e.total) * 100;
+        $uProgPercent.text(Math.floor(progression));
       }
     };
+
     xhr.onload = function(e) {
-      if (this.status == 200) {
-        progressBar.value = 0;
-      }
-    };*/
+      $uZone.show();
+      $uProg.hide();
+    };
 
     xhr.send(formData);
 }

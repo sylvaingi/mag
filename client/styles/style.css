@@ -1995,10 +1995,11 @@ body {
   position: relative;
   left: 40%;
   width: 60%;
+  height: 100%;
   padding: 15px;
 }
 
-/* line 52, ../../sass/layout/_main.scss */
+/* line 53, ../../sass/layout/_main.scss */
 .mt-album-gallery,
 .mt-photo-gallery {
   position: relative;
@@ -2006,7 +2007,7 @@ body {
   background: white;
 }
 
-/* line 59, ../../sass/layout/_main.scss */
+/* line 60, ../../sass/layout/_main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -2015,12 +2016,12 @@ body {
   /* 2 */
 }
 
-/* line 64, ../../sass/layout/_main.scss */
+/* line 65, ../../sass/layout/_main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 68, ../../sass/layout/_main.scss */
+/* line 69, ../../sass/layout/_main.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -2185,18 +2186,40 @@ body {
   height: 100%;
 }
 
-/* line 5, ../../sass/component/_upload.scss */
-#mt-upload-zone {
+/* line 1, ../../sass/component/_upload.scss */
+.mt-upload-content {
+  position: relative;
+  top: 50%;
   width: 90%;
-  height: 300px;
-  margin: 10px auto;
-  line-height: 300px;
+  height: 500px;
+  margin: -250px auto 0 auto;
+  text-align: center;
+}
+/* line 10, ../../sass/component/_upload.scss */
+.mt-upload-content h2 {
+  font-size: 2em;
+}
+
+/* line 15, ../../sass/component/_upload.scss */
+#mt-upload-zone {
+  width: 100%;
+  height: 100%;
+  line-height: 500px;
   text-align: center;
   border: 1px dashed rgba(0, 0, 0, 0.5);
   background: #f4f4f4;
 }
-/* line 14, ../../sass/component/_upload.scss */
+/* line 23, ../../sass/component/_upload.scss */
+#mt-upload-zone:hover {
+  cursor: pointer;
+}
+/* line 27, ../../sass/component/_upload.scss */
 #mt-upload-zone.drag-hover {
-  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1);
-  border: 1px dashed #bb2b2b;
+  box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
+  border: 2px dashed #ca1974;
+}
+
+/* line 33, ../../sass/component/_upload.scss */
+#mt-upload-progress {
+  margin-top: 225px;
 }
