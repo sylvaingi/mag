@@ -14,8 +14,12 @@ Meteor.Router.add({
         if(!gHandle.ready()){
             return;
         }
+        var gallery = MAG.Galleries.findOne({_id: id});
+        Session.set("currentGallery", gallery);
 
-        Session.set("currentGalleryId", id);
+        var user = Meteor.users.findOne({_id: gallery.userId});
+        Session.set("currentGalleryCreator", user);
+
         return "gallery";
     },
 

@@ -2037,7 +2037,7 @@ body {
 
 /* line 9, ../../sass/component/_viewer.scss */
 .mt-gallery-title {
-  position: fixed;
+  position: absolute;
   top: 40px;
   left: 40px;
   font-size: 56px;
@@ -2160,15 +2160,18 @@ body {
   height: 200px;
   margin: 25px;
 }
+/* line 9, ../../sass/component/_photo.scss */
+.mt-photo:hover {
+  cursor: pointer;
+}
 
-/* line 10, ../../sass/component/_photo.scss */
+/* line 14, ../../sass/component/_photo.scss */
 .mt-photo-thumb {
   height: 100%;
 }
 
 /* line 1, ../../sass/component/_overlay.scss */
-.overlay {
-  display: none;
+#mt-photo-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -2177,13 +2180,13 @@ body {
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden;
   z-index: 10;
+  cursor: pointer;
 }
 
-/* line 13, ../../sass/component/_overlay.scss */
-.overlay-box {
+/* line 14, ../../sass/component/_overlay.scss */
+.mt-photo-overlay-content {
   position: relative;
-  width: 100%;
-  height: 100%;
+  cursor: default;
 }
 
 /* line 1, ../../sass/component/_upload.scss */

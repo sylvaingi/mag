@@ -1,7 +1,8 @@
 <template name="gallery">
     <ul class="mt-photo-gallery">
-        {{#each pictures}}
-            {{> pictureThumb}}
+        {{#each photos}}
+            {{> photo}}
         {{/each}}
     </ul>
+    {{> photoOverlay}}
 </template>

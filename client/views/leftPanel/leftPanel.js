@@ -3,6 +3,20 @@ Template.leftPanel.helpers({
         return "img/bg1.jpg";
     },
     title: function(){
-        return "TITRE";
+        var title;
+        var page = Meteor.Router.page();
+
+        if(page === "galleryList"){
+            title = "maude & antoine";
+        }
+        else if (page === "form"){
+            title = "Envoi de photos";
+        }
+        else if(page === "gallery"){
+            title = "Photos de ";
+            title += Session.get("currentGalleryCreator").profile.name;
+        }
+
+        return title;
     }
 });

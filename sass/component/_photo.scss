@@ -5,6 +5,10 @@
     height: 200px;
     margin: 25px;
     @extend .fadeInRight;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .mt-photo-thumb {
