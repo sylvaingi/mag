@@ -1,4 +1,4 @@
-.mt-gallery-viewer {
+.mt-gallery-left {
     position: fixed;
     left: 0;
     width: 40%;
@@ -6,19 +6,11 @@
     overflow: hidden;
 }
 
-.mt-viewer-title {
-	position: fixed;
-	top: 40px;
-	left: 40px;
-
-	h1 {
-		font-size: 56px;
-		text-transform: uppercase;
-		word-wrap: break-word;
-	}
-
-	.mt-viewer-open {
-		font-size: 12px;
-		font-style: italic;
-	}
+.mt-gallery-title {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    font-size: 56px;
+    text-transform: uppercase;
+    word-wrap: break-word;
 }

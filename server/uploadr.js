@@ -59,11 +59,11 @@ function processFileSync(file, destFolder){
 
   fs.renameSync(file.path, original);
 
-  _.each(MAG.imagesWidths, function(w){
+  _.each(MAG.imagesHeights, function(h){
     Imagemagick.resize({
       srcPath: original,
-      dstPath: baseName + w + ".jpg",
-      width: w
+      dstPath: baseName + h + ".jpg",
+      height: h
     });
   });
 }

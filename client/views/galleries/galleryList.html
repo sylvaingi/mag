@@ -9,13 +9,15 @@
 <template name="galleryThumb">
      <li class="mt-album">
         <a href="/{{_id}}">
-            {{picture sample "mt-thumb" "300"}}
-
+            <div class="mt-album-thumb">
+                {{picture sample "200"}}
+            </div>
+            {{#isolate}}
             <div class="mt-album-name">
                 <p>{{creator}}</p>
                 <p class="mt-photo-counter">{{size}} photos</p>
             </div>
-
+            {{/isolate}}
             <div class="mt-album-over">
                 <div class="mt-album-over-circle">
                     <i class="icon-eyes"></i>

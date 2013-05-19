@@ -1,17 +1,24 @@
 Meteor.subscribe("userData");
 Meteor.subscribe("allUserData");
 
-Meteor.subscribe("galleries");
+var gHandle = Meteor.subscribe("galleries");
 Meteor.subscribe("pictures");
 
 
 Meteor.Router.add({
     "/": "galleryList",
 
+    "/form": "form",
+
     "/:id": function(id){
+        if(!gHandle.ready()){
+            return;
+        }
+
         Session.set("currentGalleryId", id);
         return "gallery";
     },
+
 
     "*": "not_found"
 });

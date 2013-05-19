@@ -7,16 +7,16 @@ Template.form.events({
 
   "drop": function(event){
     event.preventDefault();
-    $("#file-zone").removeClass("dropzone-hover");
+    $("#mt-upload-zone").removeClass("drag-hover");
     uploadPictures(event.dataTransfer.files, uploadToken());
   },
 
   "dragenter": function(event){
-    $("#file-zone").addClass("dropzone-hover");
+    $("#mt-upload-zone").addClass("drag-hover");
   },
 
   "dragleave": function(event){
-    $("#file-zone").removeClass("dropzone-hover");
+    $("#mt-upload-zone").removeClass("drag-hover");
   },
 
   "dragover": function(event){

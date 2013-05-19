@@ -1857,8 +1857,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: 'Lobster13Regular';
-  src: url("../font/Lobster_1.3-webfont.eot");
-  src: url("../font/Lobster_1.3-webfont.eot?#iefix") format("embedded-opentype"), url("../font/Lobster_1.3-webfont.svg#Lobster13Regular") format("svg"), url("../font/Lobster_1.3-webfont.woff") format("woff"), url("../font/Lobster_1.3-webfont.ttf") format("truetype");
+  src: url("font/Lobster_1.3-webfont.eot");
+  src: url("font/Lobster_1.3-webfont.eot?#iefix") format("embedded-opentype"), url("font/Lobster_1.3-webfont.svg#Lobster13Regular") format("svg"), url("font/Lobster_1.3-webfont.woff") format("woff"), url("font/Lobster_1.3-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -1971,7 +1971,7 @@ body {
 }
 
 /* line 25, ../../sass/layout/_main.scss */
-.mt-upload-open {
+.mt-upload-link {
   position: fixed;
   top: 50%;
   right: 60%;
@@ -1980,13 +1980,17 @@ body {
   margin-top: -40px;
   color: white;
   background: black;
+  text-align: center;
+  text-decoration: none;
+  line-height: 80px;
+  font-size: 80px;
 }
-/* line 35, ../../sass/layout/_main.scss */
-.mt-upload-open:hover {
+/* line 39, ../../sass/layout/_main.scss */
+.mt-upload-link:hover {
   cursor: pointer;
 }
 
-/* line 40, ../../sass/layout/_main.scss */
+/* line 44, ../../sass/layout/_main.scss */
 .mt-gallery-content {
   position: relative;
   left: 40%;
@@ -1994,7 +1998,7 @@ body {
   padding: 15px;
 }
 
-/* line 48, ../../sass/layout/_main.scss */
+/* line 52, ../../sass/layout/_main.scss */
 .mt-album-gallery,
 .mt-photo-gallery {
   position: relative;
@@ -2002,7 +2006,7 @@ body {
   background: white;
 }
 
-/* line 55, ../../sass/layout/_main.scss */
+/* line 59, ../../sass/layout/_main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -2011,18 +2015,18 @@ body {
   /* 2 */
 }
 
-/* line 60, ../../sass/layout/_main.scss */
+/* line 64, ../../sass/layout/_main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 64, ../../sass/layout/_main.scss */
+/* line 68, ../../sass/layout/_main.scss */
 .clearfix {
   *zoom: 1;
 }
 
 /* line 1, ../../sass/component/_viewer.scss */
-.mt-gallery-viewer {
+.mt-gallery-left {
   position: fixed;
   left: 0;
   width: 40%;
@@ -2031,21 +2035,13 @@ body {
 }
 
 /* line 9, ../../sass/component/_viewer.scss */
-.mt-viewer-title {
+.mt-gallery-title {
   position: fixed;
   top: 40px;
   left: 40px;
-}
-/* line 14, ../../sass/component/_viewer.scss */
-.mt-viewer-title h1 {
   font-size: 56px;
   text-transform: uppercase;
   word-wrap: break-word;
-}
-/* line 20, ../../sass/component/_viewer.scss */
-.mt-viewer-title .mt-viewer-open {
-  font-size: 12px;
-  font-style: italic;
 }
 
 /* line 1, ../../sass/component/_album.scss */
@@ -2072,41 +2068,45 @@ body {
   -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
-/* line 23, ../../sass/component/_album.scss */
-.mt-album img {
+
+/* line 24, ../../sass/component/_album.scss */
+.mt-album-thumb, .mt-photo-thumb {
+  position: relative;
   width: 100%;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-  text-align: center;
+  height: 200px;
+  overflow: hidden;
+}
+/* line 30, ../../sass/component/_album.scss */
+.mt-album-thumb img, .mt-photo-thumb img {
+  height: 100%;
 }
 
-/* line 32, ../../sass/component/_album.scss */
+/* line 35, ../../sass/component/_album.scss */
 .mt-album-count {
   height: 18px;
   text-align: center;
 }
 
-/* line 37, ../../sass/component/_album.scss */
+/* line 40, ../../sass/component/_album.scss */
 .mt-album-name {
   height: 40px;
   padding: 5px;
   text-align: center;
 }
-/* line 42, ../../sass/component/_album.scss */
+/* line 45, ../../sass/component/_album.scss */
 .mt-album-name p {
   font-size: 14px;
   line-height: 18px;
   color: black;
 }
-/* line 47, ../../sass/component/_album.scss */
+/* line 50, ../../sass/component/_album.scss */
 .mt-album-name p.mt-photo-counter {
   font-size: 11px;
   font-style: italic;
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 55, ../../sass/component/_album.scss */
+/* line 58, ../../sass/component/_album.scss */
 .mt-album-over {
   display: none;
   position: absolute;
@@ -2116,12 +2116,10 @@ body {
   height: 100%;
   text-align: center;
   background: rgba(250, 250, 250, 0.5);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 69, ../../sass/component/_album.scss */
+/* line 70, ../../sass/component/_album.scss */
 .mt-album-over-circle {
   position: relative;
   top: 50%;
@@ -2137,12 +2135,12 @@ body {
   -o-border-radius: 30px;
   border-radius: 30px;
 }
-/* line 84, ../../sass/component/_album.scss */
+/* line 85, ../../sass/component/_album.scss */
 .mt-album-over-circle:hover {
   cursor: pointer;
 }
 
-/* line 89, ../../sass/component/_album.scss */
+/* line 90, ../../sass/component/_album.scss */
 .mt-album-eyes {
   position: absolute;
   top: 50%;
@@ -2160,6 +2158,11 @@ body {
   width: 200px;
   height: 200px;
   margin: 25px;
+}
+
+/* line 10, ../../sass/component/_photo.scss */
+.mt-photo-thumb {
+  height: 100%;
 }
 
 /* line 1, ../../sass/component/_overlay.scss */
@@ -2183,7 +2186,7 @@ body {
 }
 
 /* line 5, ../../sass/component/_upload.scss */
-#mt-drop-files {
+#mt-upload-zone {
   width: 90%;
   height: 300px;
   margin: 10px auto;
@@ -2192,204 +2195,8 @@ body {
   border: 1px dashed rgba(0, 0, 0, 0.5);
   background: #f4f4f4;
 }
-
-/* line 15, ../../sass/component/_upload.scss */
-.mt-upload-input {
-  margin-left: 40%;
-}
-
-/* line 19, ../../sass/component/_upload.scss */
-#dropped-files {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 25px;
-}
-/* line 25, ../../sass/component/_upload.scss */
-#dropped-files .image {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 1px solid white;
-  background: white;
-  overflow: hidden;
-}
-
-/* line 35, ../../sass/component/_upload.scss */
-#upload-button {
-  display: none;
-  position: absolute;
-  top: 87px;
-  width: 210px;
-  z-index: 10;
-}
-/* line 42, ../../sass/component/_upload.scss */
-#upload-button a {
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  background-color: #ca1974;
-}
-/* line 51, ../../sass/component/_upload.scss */
-#upload-button span {
-  display: block;
-  position: relative;
-  left: -14px;
-  width: 160px;
-  margin: 20px 0 0 0;
-  padding: 4px 0;
-  font-size: 1.1em;
-  text-align: center;
-  border-radius: 10px;
-  background: white;
-}
-/* line 64, ../../sass/component/_upload.scss */
-#upload-button .delete {
-  margin-left: 8px;
-  padding: 7px 6px 4px 6px;
-  font-size: 1em;
-  border-radius: 100px;
-  background: rgba(0, 0, 0, 0.5);
-}
-/* line 71, ../../sass/component/_upload.scss */
-#upload-button .delete:hover {
-  background: #ca1974;
-}
-
-/* line 77, ../../sass/component/_upload.scss */
-#extra-files {
-  display: none;
-  position: relative;
-  float: left;
-}
-/* line 82, ../../sass/component/_upload.scss */
-#extra-files .number {
-  display: inline-block;
-  position: relative;
-  margin: 60px 0 0 0;
-  padding: 20px 30px;
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-/* line 93, ../../sass/component/_upload.scss */
-#extra-files .number:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 18px;
-  left: -40px;
-  border: 20px solid;
-  border-color: transparent rgba(0, 0, 0, 0.5) transparent transparent;
-}
-/* line 104, ../../sass/component/_upload.scss */
-#extra-files #file-list {
-  display: none;
-  position: absolute;
-  top: 100px;
-  left: -10px;
-  width: 250px;
-  max-height: 220px;
-  padding: 20px 0;
-  color: #ca1974;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background: white;
-}
-/* line 116, ../../sass/component/_upload.scss */
-#extra-files #file-list ul {
-  width: 250px;
-  max-height: 200px;
-  padding: 0;
-  border-top: 1px solid #dadada;
-  list-style: none;
-  border-bottom: 1px solid #ca1974 !important;
-  overflow: scroll;
-}
-/* line 126, ../../sass/component/_upload.scss */
-#extra-files #file-list ul li:last-of-type {
-  border-bottom: 0 !important;
-}
-
-/* line 134, ../../sass/component/_upload.scss */
-#uploaded-holder {
-  display: none;
-  float: left;
-  width: 700px;
-  height: 250px;
-}
-
-/* line 141, ../../sass/component/_upload.scss */
-#loading {
-  display: none;
-  float: left;
-  width: 100%;
-  position: relative;
-}
-
-/* line 148, ../../sass/component/_upload.scss */
-#loading-bar {
-  width: 404px;
-  height: 40px;
-  padding: 2px;
-  background: white;
-}
-
-/* line 155, ../../sass/component/_upload.scss */
-.loading-color {
-  width: 0%;
-  height: 100%;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
-  background-color: #ca1974;
-}
-
-/* line 162, ../../sass/component/_upload.scss */
-#loading-content {
-  position: absolute;
-  top: 15px;
-  width: 405px;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* line 171, ../../sass/component/_upload.scss */
-#file-name-holder {
-  float: left;
-  width: 100%;
-}
-/* line 175, ../../sass/component/_upload.scss */
-#file-name-holder h1 {
-  margin: 0;
-  padding: 20px 0;
-  font-size: 3em;
-  text-align: center;
-  border-bottom: 1px solid #dadada;
-}
-
-/* line 184, ../../sass/component/_upload.scss */
-#uploaded-files {
-  top: 100px;
-  min-height: 320px;
-  padding: 0;
-  color: #ca1974;
-}
-/* line 190, ../../sass/component/_upload.scss */
-#uploaded-files li {
-  padding: 10px;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 25px;
-  color: #ca1974;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
-/* line 199, ../../sass/component/_upload.scss */
-#uploaded-files a {
-  color: #ca1974;
+/* line 14, ../../sass/component/_upload.scss */
+#mt-upload-zone.drag-hover {
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border: 1px dashed #bb2b2b;
 }

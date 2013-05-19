@@ -1,6 +1,7 @@
 Template.gallery.helpers({
-    current: function(){
-        return MAG.Galleries.findOne({_id: Session.get("currentGalleryId")});
+    creator: function(){
+        var gallery = MAG.Galleries.findOne({_id: Session.get("currentGalleryId")});
+        return Meteor.users.findOne({_id: gallery.userId}).profile.name;
     },
 
     pictures: function(){

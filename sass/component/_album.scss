@@ -19,13 +19,16 @@
             @include box-shadow(inset 0 0 0 1px $blackLight);
         }
     }
+}
+
+.mt-album-thumb, .mt-photo-thumb {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
 
     img {
-        width: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 auto;
-        text-align: center;
+        height: 100%;
     }
 }
 
@@ -61,8 +64,6 @@
     height: 100%;
     text-align: center;
     background: $whiteLight;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
 }
 

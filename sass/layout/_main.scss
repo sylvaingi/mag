@@ -22,7 +22,7 @@ body {
     height: 100%;
 }
 
-.mt-upload-open {
+.mt-upload-link {
     position: fixed;
     top: 50%;
     right: 60%;
@@ -31,6 +31,10 @@ body {
     margin-top: -40px;
     color: $primary;
     background: $secondary;
+    text-align: center;
+    text-decoration: none;
+    line-height: 80px;
+    font-size: 80px;
 
     &:hover {
         cursor: pointer;
