@@ -36,6 +36,7 @@ Meteor.startup(function(){
         scrollspeed : 100,
         touchbehavior : true,
         boxzoom: false,
-        vertical: true
+        vertical: true,
+        horizrailenabled: false
     });
 });
