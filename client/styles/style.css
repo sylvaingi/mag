@@ -1,4 +1,4 @@
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-1.9.3-p385/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -2026,6 +2026,64 @@ body {
   *zoom: 1;
 }
 
+/* line 1, ../../sass/component/_login.scss */
+#login-buttons {
+  position: fixed;
+  top: 30px;
+  left: inherit;
+  right: 30px;
+}
+/* line 7, ../../sass/component/_login.scss */
+#login-buttons .login-close-text {
+  float: right;
+}
+/* line 11, ../../sass/component/_login.scss */
+#login-buttons #login-dropdown-list {
+  left: inherit;
+  right: 5px;
+}
+/* line 17, ../../sass/component/_login.scss */
+#login-buttons .login-button,
+#login-buttons .configure-button {
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 23, ../../sass/component/_login.scss */
+#login-buttons .login-button:active,
+#login-buttons .configure-button:active {
+  background: #ca1974;
+}
+/* line 27, ../../sass/component/_login.scss */
+#login-buttons .login-button:hover,
+#login-buttons .configure-button:hover {
+  background: black;
+}
+
+/* line 34, ../../sass/component/_login.scss */
+#login-buttons a,
+.accounts-dialog a {
+  text-decoration: none;
+}
+
+/* line 38, ../../sass/component/_login.scss */
+.accounts-dialog {
+  width: 198px;
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
 /* line 1, ../../sass/component/_viewer.scss */
 .mt-gallery-left {
   position: fixed;
@@ -2040,7 +2098,8 @@ body {
   position: absolute;
   top: 40px;
   left: 40px;
-  font-size: 56px;
+  font-size: 34px;
+  letter-spacing: -2px;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -2218,11 +2277,10 @@ body {
 }
 /* line 27, ../../sass/component/_upload.scss */
 #mt-upload-zone.drag-hover {
-  box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.6);
-  border: 2px dashed #ca1974;
+  border: 1px dashed #ca1974;
 }
 
-/* line 33, ../../sass/component/_upload.scss */
+/* line 32, ../../sass/component/_upload.scss */
 #mt-upload-progress {
   margin-top: 225px;
 }
