@@ -1,17 +1,17 @@
 @font-face {
-	font-family: 'icomoon';
-	src:url('/font/icomoon.eot');
-	src:url('/font/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('/font/icomoon.svg#icomoon') format('svg'),
-		url('/font/icomoon.woff') format('woff'),
-		url('/font/icomoon.ttf') format('truetype');
+	font-family: 'entypo';
+	src:url('/font/entypo.eot');
+	src:url('/font/entypo.eot?#iefix') format('embedded-opentype'),
+		url('/font/entypo.svg#entypo') format('svg'),
+		url('/font/entypo.woff') format('woff'),
+		url('/font/entypo.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'icomoon';
+	font-family: 'entypo';
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -27,15 +27,14 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-home, .icon-images, .icon-cloud-download, .icon-cloud-upload, .icon-enter, .icon-exit, .icon-arrow-right, .icon-arrow-left, .icon-fullscreen-alt, .icon-fullscreen-exit-alt, .icon-thumbs-up, .icon-comment, .icon-plus {
-	font-family: 'icomoon';
+.icon-home, .icon-images, .icon-cloud-download, .icon-cloud-upload, .icon-enter, .icon-exit, .icon-arrow-right, .icon-arrow-left, .icon-fullscreen-alt, .icon-fullscreen-exit-alt, .icon-thumbs-up, .icon-comment, .icon-plus, .icon-eye {
+	font-family: 'entypo';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
-	margin-right: 5px;
 	-webkit-font-smoothing: antialiased;
 }
 .icon-home:before {
@@ -76,4 +75,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-plus:before {
 	content: "\e00c";
+}
+.icon-eye:before {
+	content: "\e00d";
 }
