@@ -1942,8 +1942,8 @@ a:hover, a:active, a:focus {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("font/icomoon.eot");
-  src: url("font/icomoon.eot?#iefix") format("embedded-opentype"), url("font/icomoon.svg#icomoon") format("svg"), url("font/icomoon.woff") format("woff"), url("font/icomoon.ttf") format("truetype");
+  src: url("/icomoon.eot");
+  src: url("/icomoon.eot?#iefix") format("embedded-opentype"), url("/icomoon.svg#icomoon") format("svg"), url("/icomoon.woff") format("woff"), url("/icomoon.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -2067,41 +2067,68 @@ body {
   height: 100%;
   font-family: Arial, helvetica, sans-serif;
   background: white;
+  overflow-x: hidden;
 }
 
-/* line 20, ../../sass/layout/_main.scss */
+/* line 21, ../../sass/layout/_main.scss */
 .mt-gallery {
   position: relative;
   height: 100%;
 }
 
-/* line 25, ../../sass/layout/_main.scss */
+/* line 26, ../../sass/layout/_main.scss */
 .menu {
   position: fixed;
   top: 0;
-  right: 60%;
-  width: 80px;
+  left: 0;
+  width: 200px;
   height: 100%;
+  padding: 10px;
   color: white;
   background: black;
   text-align: center;
   text-decoration: none;
 }
-/* line 40, ../../sass/layout/_main.scss */
+/* line 39, ../../sass/layout/_main.scss */
+.menu .menu-item {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+  opacity: 0.7;
+}
+/* line 46, ../../sass/layout/_main.scss */
+.menu .menu-item:hover {
+  opacity: 1;
+}
+/* line 50, ../../sass/layout/_main.scss */
+.menu .menu-item [class^="icon-"] {
+  display: block;
+  font-size: 32px;
+  margin: 0 0 5px 0;
+}
+/* line 56, ../../sass/layout/_main.scss */
+.menu .menu-item a {
+  display: block;
+  font-size: 12px;
+  color: white;
+  text-decoration: none;
+}
+/* line 64, ../../sass/layout/_main.scss */
 .menu:hover {
   cursor: pointer;
 }
 
-/* line 45, ../../sass/layout/_main.scss */
+/* line 69, ../../sass/layout/_main.scss */
 .mt-gallery-content {
   position: relative;
   left: 40%;
   width: 60%;
   height: 100%;
-  padding: 15px;
+  background: white;
 }
 
-/* line 54, ../../sass/layout/_main.scss */
+/* line 78, ../../sass/layout/_main.scss */
 .mt-album-gallery,
 .mt-photo-gallery {
   position: relative;
@@ -2109,7 +2136,7 @@ body {
   background: white;
 }
 
-/* line 61, ../../sass/layout/_main.scss */
+/* line 85, ../../sass/layout/_main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -2118,12 +2145,12 @@ body {
   /* 2 */
 }
 
-/* line 66, ../../sass/layout/_main.scss */
+/* line 90, ../../sass/layout/_main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 70, ../../sass/layout/_main.scss */
+/* line 94, ../../sass/layout/_main.scss */
 .clearfix {
   *zoom: 1;
 }
@@ -2148,7 +2175,7 @@ body {
 #login-buttons .login-button,
 #login-buttons .configure-button {
   border: none;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -2226,9 +2253,9 @@ body {
 .mt-album:hover .mt-album-over {
   display: block;
   opacity: 1;
-  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.9);
 }
 
 /* line 24, ../../sass/component/_album.scss */
@@ -2265,7 +2292,7 @@ body {
 .mt-album-name p.mt-photo-counter {
   font-size: 11px;
   font-style: italic;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 /* line 58, ../../sass/component/_album.scss */
@@ -2338,7 +2365,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   overflow: hidden;
   z-index: 10;
   cursor: pointer;
@@ -2347,7 +2374,64 @@ body {
 /* line 14, ../../sass/component/_overlay.scss */
 .mt-photo-overlay-content {
   position: relative;
+  top: 50%;
+  width: 1200px;
+  height: 600px;
+  margin: -300px auto 0 auto;
+  background: black;
   cursor: default;
+}
+/* line 23, ../../sass/component/_overlay.scss */
+.mt-photo-overlay-content .overlay-picture {
+  float: left;
+  width: 1080px;
+  height: 600px;
+  overflow: hidden;
+}
+/* line 29, ../../sass/component/_overlay.scss */
+.mt-photo-overlay-content .overlay-picture img {
+  width: 100%;
+}
+
+/* line 35, ../../sass/component/_overlay.scss */
+.overlay-picture-options {
+  float: left;
+  width: 120px;
+  height: 600px;
+  padding: 10px;
+  background: white;
+}
+/* line 42, ../../sass/component/_overlay.scss */
+.overlay-picture-options .overlay-options-item {
+  display: block;
+  height: 30px;
+  margin-bottom: 5px;
+}
+/* line 47, ../../sass/component/_overlay.scss */
+.overlay-picture-options .overlay-options-item a {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+/* line 53, ../../sass/component/_overlay.scss */
+.overlay-picture-options .overlay-options-item a:hover {
+  color: #ca1974;
+}
+/* line 58, ../../sass/component/_overlay.scss */
+.overlay-picture-options .overlay-options-item [class^="icon-"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 65, ../../sass/component/_overlay.scss */
+.close-overlay {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  background: white;
 }
 
 /* line 1, ../../sass/component/_upload.scss */
@@ -2370,7 +2454,7 @@ body {
   height: 100%;
   line-height: 500px;
   text-align: center;
-  border: 1px dashed rgba(0, 0, 0, 0.5);
+  border: 1px dashed rgba(0, 0, 0, 0.9);
   background: #f4f4f4;
 }
 /* line 23, ../../sass/component/_upload.scss */

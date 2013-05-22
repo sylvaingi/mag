@@ -1,7 +1,26 @@
 <template name="photoOverlay">
     <div id="mt-photo-overlay" style="display:none;">
+    	<div class="close-overlay">
+    		<i class="icon-fullscreen-exit-alt"></i>
+    	</div>
         <div class="mt-photo-overlay-content">
-            {{picture photo 1000}}
+            <div class="overlay-picture">{{picture photo 1000}}</div>
+            <div class="overlay-picture-options">
+            	<ul>
+            		<li class="overlay-options-item">
+            			<a href="../">
+            				<i class="icon-thumbs-up"></i>
+            				j'aime
+            			</a>
+            		</li>
+					<li class="overlay-options-item">
+						<a href="../">
+							<i class="icon-cloud-download"></i>
+							télécharger la photo
+						</a>
+					</li>
+            	</ul>
+            </div>
         </div>
     </div>
 </template>
