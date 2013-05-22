@@ -1,16 +1,15 @@
 #login-buttons {
-	position: fixed;
-	top: 30px;
-	left: inherit;
-	right: 30px;
 
 	.login-close-text {
 		float: right;
 	}
 
 	#login-dropdown-list {
-		left: inherit;
-		right: 5px;
+		top: inherit;
+	}
+
+	.login-link-and-dropdown-list {
+		left: 0;
 	}
 
 	.login-button,
@@ -27,6 +26,15 @@
 		&:hover {
 			background: $secondary;
 		}
+	}
+
+	#login-sign-in-link,
+	#login-name-link {
+		line-height: 45px;
+	}
+
+	.login-close-text {
+		color: $secondary;
 	}
 }
 
