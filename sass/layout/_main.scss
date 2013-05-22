@@ -22,19 +22,20 @@ body {
     height: 100%;
 }
 
-.mt-upload-link {
+.menu {
     position: fixed;
-    top: 50%;
+    top: 0;
     right: 60%;
     width: 80px;
-    height: 80px;
-    margin-top: -40px;
+    height: 100%;
     color: $primary;
     background: $secondary;
     text-align: center;
     text-decoration: none;
-    line-height: 80px;
-    font-size: 80px;
+
+    > li {
+        
+    }
 
     &:hover {
         cursor: pointer;

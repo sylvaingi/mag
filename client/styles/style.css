@@ -1940,6 +1940,111 @@ a:hover, a:active, a:focus {
   color: #b9c732;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("font/icomoon.eot");
+  src: url("font/icomoon.eot?#iefix") format("embedded-opentype"), url("font/icomoon.svg#icomoon") format("svg"), url("font/icomoon.woff") format("woff"), url("font/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 13, ../../sass/layout/_icons.scss */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+/* line 30, ../../sass/layout/_icons.scss */
+.icon-home, .icon-images, .icon-cloud-download, .icon-cloud-upload, .icon-enter, .icon-exit, .icon-arrow-right, .icon-arrow-left, .icon-fullscreen-alt, .icon-fullscreen-exit-alt, .icon-thumbs-up, .icon-comment, .icon-plus {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 41, ../../sass/layout/_icons.scss */
+.icon-home:before {
+  content: "\e000";
+}
+
+/* line 44, ../../sass/layout/_icons.scss */
+.icon-images:before {
+  content: "\e002";
+}
+
+/* line 47, ../../sass/layout/_icons.scss */
+.icon-cloud-download:before {
+  content: "\e003";
+}
+
+/* line 50, ../../sass/layout/_icons.scss */
+.icon-cloud-upload:before {
+  content: "\e004";
+}
+
+/* line 53, ../../sass/layout/_icons.scss */
+.icon-enter:before {
+  content: "\e001";
+}
+
+/* line 56, ../../sass/layout/_icons.scss */
+.icon-exit:before {
+  content: "\e005";
+}
+
+/* line 59, ../../sass/layout/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e006";
+}
+
+/* line 62, ../../sass/layout/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e007";
+}
+
+/* line 65, ../../sass/layout/_icons.scss */
+.icon-fullscreen-alt:before {
+  content: "\e008";
+}
+
+/* line 68, ../../sass/layout/_icons.scss */
+.icon-fullscreen-exit-alt:before {
+  content: "\e009";
+}
+
+/* line 71, ../../sass/layout/_icons.scss */
+.icon-thumbs-up:before {
+  content: "\e00a";
+}
+
+/* line 74, ../../sass/layout/_icons.scss */
+.icon-comment:before {
+  content: "\e00b";
+}
+
+/* line 77, ../../sass/layout/_icons.scss */
+.icon-plus:before {
+  content: "\e00c";
+}
+
 /* line 1, ../../sass/layout/_main.scss */
 * {
   -webkit-box-sizing: border-box;
@@ -1971,26 +2076,23 @@ body {
 }
 
 /* line 25, ../../sass/layout/_main.scss */
-.mt-upload-link {
+.menu {
   position: fixed;
-  top: 50%;
+  top: 0;
   right: 60%;
   width: 80px;
-  height: 80px;
-  margin-top: -40px;
+  height: 100%;
   color: white;
   background: black;
   text-align: center;
   text-decoration: none;
-  line-height: 80px;
-  font-size: 80px;
 }
-/* line 39, ../../sass/layout/_main.scss */
-.mt-upload-link:hover {
+/* line 40, ../../sass/layout/_main.scss */
+.menu:hover {
   cursor: pointer;
 }
 
-/* line 44, ../../sass/layout/_main.scss */
+/* line 45, ../../sass/layout/_main.scss */
 .mt-gallery-content {
   position: relative;
   left: 40%;
@@ -1999,7 +2101,7 @@ body {
   padding: 15px;
 }
 
-/* line 53, ../../sass/layout/_main.scss */
+/* line 54, ../../sass/layout/_main.scss */
 .mt-album-gallery,
 .mt-photo-gallery {
   position: relative;
@@ -2007,7 +2109,7 @@ body {
   background: white;
 }
 
-/* line 60, ../../sass/layout/_main.scss */
+/* line 61, ../../sass/layout/_main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -2016,12 +2118,12 @@ body {
   /* 2 */
 }
 
-/* line 65, ../../sass/layout/_main.scss */
+/* line 66, ../../sass/layout/_main.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 69, ../../sass/layout/_main.scss */
+/* line 70, ../../sass/layout/_main.scss */
 .clearfix {
   *zoom: 1;
 }
