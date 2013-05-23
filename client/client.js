@@ -7,7 +7,7 @@ Meteor.subscribe("pictures");
 
 Meteor.Router.add({
     "/": "galleryList",
-    
+
     "/myGallery": "galleryList",
 
     "/createAlbum": "form",
@@ -43,4 +43,11 @@ Meteor.startup(function(){
         vertical: true,
         horizrailenabled: false
     });
+});
+
+Accounts.config({
+    sendVerificationEmail: false
+});
+Accounts.ui.config({
+    passwordSignupFields: 'USERNAME_ONLY'
 });
