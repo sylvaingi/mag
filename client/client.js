@@ -7,8 +7,12 @@ Meteor.subscribe("pictures");
 
 Meteor.Router.add({
     "/": "galleryList",
+    
+    "/myGallery": "galleryList",
 
-    "/form": "form",
+    "/createAlbum": "form",
+
+    "/addPicture": "form",
 
     "/:id": function(id){
         if(!gHandle.ready()){
