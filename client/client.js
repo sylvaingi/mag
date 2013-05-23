@@ -41,7 +41,8 @@ Meteor.startup(function(){
         touchbehavior : true,
         boxzoom: false,
         vertical: true,
-        horizrailenabled: false
+        horizrailenabled: false,
+        autohidemode: false
     });
 });
 
