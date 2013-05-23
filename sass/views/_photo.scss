@@ -1,0 +1,31 @@
+.mt-photo {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 0 5px 5px 0;
+    @extend .fadeInRight;
+
+    &:hover {
+        cursor: pointer;
+
+        .mt-photo-thumb-over {
+            display: block;
+            opacity: 1;
+            @include box-shadow(inset 0 0 0 1px $blackLight);
+        }
+    }
+}
+
+.mt-photo-thumb {
+    position: relative;
+    height: 100%;
+}
+
+.mt-photo-thumb-over {
+    @extend .mt-album-over;
+}
+
+.mt-photo-thumb-circle {
+    @extend .mt-album-over-circle;
+}

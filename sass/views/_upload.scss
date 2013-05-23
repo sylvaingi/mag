@@ -1,0 +1,58 @@
+.mt-upload-content {
+    position: relative;
+    top: 5%;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    @extend .fadeInRight;
+
+    h2 {
+        font-size: 2em;
+    }
+}
+
+.new-album-name {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    text-align: left;
+
+    p {
+        margin-bottom: 3px;
+    }
+
+    input {
+        width: 100%;
+        height: 48px;
+        padding: 0 5px;
+        font-size: 32px;
+        background: $color-3;
+
+        &:focus {
+            outline: none; 
+        }
+    }
+}
+
+#mt-upload-zone {
+    width: 100%;
+    height: 100%;
+    line-height: 500px;
+    text-align: center;
+    border: 1px dashed $blackLight;
+    background: $color-3;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.drag-hover {
+        border : 1px dashed $color-1;
+    }
+}
+
+#mt-upload-progress {
+	margin-top: 50px;
+}

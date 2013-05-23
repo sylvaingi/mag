@@ -1,0 +1,55 @@
+#login-buttons {
+
+	.login-close-text {
+		float: right;
+	}
+
+	#login-dropdown-list {
+		top: inherit;
+	}
+
+	.login-link-and-dropdown-list {
+		left: 0;
+	}
+
+	.login-button,
+	.configure-button {
+		border: none;
+		background: $blackLight;
+		@include border-radius(0);
+		@include box-shadow(none);
+
+		&:active {
+			background: $color-1;
+		}
+
+		&:hover {
+			background: $secondary;
+		}
+	}
+
+	#login-sign-in-link,
+	#login-name-link {
+		line-height: 45px;
+	}
+
+	.login-close-text {
+		color: $secondary;
+	}
+}
+
+#login-buttons a, 
+.accounts-dialog a {
+	text-decoration: none;
+}
+
+.accounts-dialog {
+	width: 198px;
+	border-radius: 0;
+	border: none;
+	@include box-shadow(0 3px 6px 1px rgba(0, 0, 0, 0.3));
+	z-index: 1000;
+}
+
+
+
