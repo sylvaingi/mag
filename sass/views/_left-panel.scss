@@ -25,7 +25,7 @@
     //right: 60%;
     width: 150px;
     height: 100%;
-    padding: 10px;
+    padding: 15px;
     color: $primary;
     background: $secondary;
     text-align: center;
@@ -55,6 +55,13 @@
             color: $primary;
             text-decoration: none;
         }
+    }
+
+    .separator {
+    	width: 80%;
+    	height: 1px;
+    	margin: 10px auto 20px auto;
+    	background: $primary;
     }
 
     &:hover {
