@@ -12,10 +12,10 @@
 @import "layout/icons";
 @import "layout/main";
 
-@import "component/login";
-@import "component/viewer";
-@import "component/album";
-@import "component/photo";
-@import "component/overlay";
-@import "component/upload";
+@import "views/login";
+@import "views/left-panel";
+@import "views/album";
+@import "views/photo";
+@import "views/overlay";
+@import "views/upload";
 
