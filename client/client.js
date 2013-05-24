@@ -8,11 +8,16 @@ Meteor.subscribe("pictures");
 Meteor.Router.add({
     "/": "galleryList",
 
-    "/myGallery": "galleryList",
+    "/addPicture": function(){
+        if(!Meteor.userId()){
+            Meteor.defer(function(){
+                alert("Veuillez vous connecter via le bouton \"Sign in\"");
+                Meteor.Router.to("/");
+            });
+        }
 
-    "/createAlbum": "form",
-
-    "/addPicture": "form",
+        return "form";
+    },
 
     "/:id": function(id){
         if(!gHandle.ready()){
