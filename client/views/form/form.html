@@ -1,16 +1,12 @@
 <template name="form">
     <div class="mt-upload-content">
         <form action="#">
-            <div class="new-album-name">
-                <p>Nom de l'album</p>
-                <input type="text">
-            </div>
             {{#isolate}}
             <input id="upload-token" name="upload_token" type="hidden" value="{{currentUser.uploadToken}}">
             {{/isolate}}
             <input id="mt-upload-files" name="files" type="file" required accept="image/*" multiple style="display:none;">
         </form>
-        
+
         <div id="mt-upload-zone">
             <h2>Cliquez ici ou déposez vos photos</h2>
         </div>

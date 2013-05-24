@@ -22,13 +22,16 @@
         		<li class="menu-item">
         			{{loginButtons}}
         		</li>
-                <li class="menu-item coming-soon">
-                    <a href="/myGallery">
+                {{#if gallery}}
+                <li class="menu-item">
+                    {{#isolate}}
+                    <a href="/{{gallery._id}}">
                         <i class="icon-camera"></i>
                         Ma galerie
-                        <span class="coming-info"></br>(Bient&ocirc;t disponible)</span>
                     </a>
+                    {{/isolate}}
                 </li>
+                {{/if}}
                 <!--<li  class="menu-item coming-soon">
                     <a href="/createAlbum">
                         <i class="icon-images"></i>
