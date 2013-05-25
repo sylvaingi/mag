@@ -18,6 +18,12 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .coming-soon {
     opacity: 0.5 !important;
 }

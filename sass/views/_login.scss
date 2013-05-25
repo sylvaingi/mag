@@ -1,3 +1,124 @@
+.login-page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $blackLight;
+	z-index: 10;
+}
+
+.login-content {
+	$width: 600px;
+	$height: 515px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $width;
+	height: $height;
+	margin-top: - $height / 2;
+	margin-left: - $width / 2;
+	padding: 15px;
+
+	.or {
+		margin: 15px auto;
+		text-align: center;
+		
+		.or-text {
+			color: $primary;
+		}
+
+		.hline {
+			text-decoration: line-through;
+			color: lightgrey;
+		}
+	}
+	
+	.login-content-title {
+		font-size: 56px;
+		color: $primary;
+		margin-bottom: 10px;
+	}
+
+	.login-content-subTitle {
+		margin-bottom: 15px;
+		text-align: center;
+		color: $primary;
+	}
+
+	.login-buttons-content {
+		width: 380px;
+		margin: 0 auto;
+	}
+
+	.login-button {
+		display: inline-block;
+		width: 120px;
+		height: 120px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&:hover,
+		&:active {
+			@include transition(0.2s);
+		}
+
+		&:hover {
+			background: $color-1;
+		}
+
+		&:active {
+			@include scale(0.95);
+		}
+	}
+
+	.login-form {
+		width: 245px;
+		margin: 0 auto;
+
+		#login-username-label-and-input,
+		#login-password-label-and-input {
+			margin-top: 5px;
+		}
+
+		.additional-link-container {
+			margin-top: 10px;
+			font-size: 16px;
+			line-height: 38px;
+			text-align: center;
+			color: $primary;
+		}
+
+		label {
+			display: block;
+			font-size: 13px;
+			line-height: 18px;
+			color: $primary;
+		}
+
+		input {
+			width: 100%;
+			height: 30px;
+			margin: 5px auto;
+		}
+	}
+
+	.login-button-form-submit {
+		display: block;
+		width: 120px;
+		height: 30px;
+		margin: 5px auto;
+		background: $primary;
+
+	}
+}
+
+
+
+//
 #login-buttons {
 
 	.login-close-text {

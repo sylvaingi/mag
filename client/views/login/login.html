@@ -1,0 +1,55 @@
+<template name="login">
+	<!-- {{loginButtons}} -->
+	<div class="login-content">
+		<h1 class="login-content-title">Connexion à la galerie</h1>
+		<p class="login-content-subTitle">Si vous n'avez pas de comptes sur les réseaux sociaux, utilsez les champs ci-dessous ou creez votre compte</p>
+
+		<div class="login-buttons-content">
+			<button class="login-button" id="facebook">
+				<i class="icon-facebook"></i>
+				Facebook
+			</button>
+			<button class="login-button" id="google">
+				<i class="icon-googleplus"></i>
+				Google
+			</button>
+			<button class="login-button" id="twitter">
+				<i class="icon-twitter"></i>
+				Twitter
+			</button>
+		</div>
+
+		<div class="or">
+		    <span class="hline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		    <span class="or-text">ou</span>
+		    <span class="hline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		 </div>
+
+		<div class="login-form login-password-form">
+			<div class="additional-link-container">
+				S'identifer ou / <a id="signup-link" class="additional-link">Creer un compte ici</a>
+			</div>
+        
+			<div id="login-username-label-and-input">
+				<label id="login-username-label" for="login-username">
+					Identifiant
+				</label>
+				<input id="login-username" type="text">
+			</div>
+
+			<div id="login-password-label-and-input">
+				<label id="login-password-label" for="login-password">
+					Mot de passe
+				</label>
+				<input id="login-password" type="password">
+			</div>
+
+			<button class="login-button-form-submit" id="login-buttons-password">
+				Connexion
+			</button>
+
+
+		</div>
+
+	</div>
+</template>
