@@ -40,6 +40,9 @@ Template.login.events({
                 if(err){
                     alert("Veuillez remplir le formulaire correctement.");
                 }
+                else {
+                    signup = false;
+                }
             });
         }
         else {
