@@ -24,7 +24,7 @@
 	.or {
 		margin: 15px auto;
 		text-align: center;
-		
+
 		.or-text {
 			color: $primary;
 		}
@@ -34,7 +34,7 @@
 			color: lightgrey;
 		}
 	}
-	
+
 	.login-content-title {
 		font-size: 56px;
 		color: $primary;
@@ -74,8 +74,13 @@
 		margin: 0 auto;
 
 		#login-username-label-and-input,
-		#login-password-label-and-input {
+		#login-password-label-and-input,
+		#login-password-confirm-label-and-input {
 			margin-top: 5px;
+		}
+
+		#login-password-confirm-label-and-input {
+			display: none;
 		}
 
 		.additional-link-container {
@@ -153,7 +158,7 @@
 	}
 }
 
-#login-buttons a, 
+#login-buttons a,
 .accounts-dialog a {
 	text-decoration: none;
 }

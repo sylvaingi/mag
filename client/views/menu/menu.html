@@ -1,7 +1,5 @@
-<template name="leftPanel">
+<template name="menu">
    <div class="mt-gallery-left">
-        <!-- <h1 class="mt-gallery-title">{{title}}</h1>
-        <img class="mt-gallery-bg" src="{{background}}" alt=""> -->
         <nav class="menu">
         	<ul>
                 <li class="menu-item">
@@ -19,9 +17,6 @@
                     </a>
                 </li>
                 <li class="separator"></li>
-        		<li class="menu-item">
-        			{{loginButtons}}
-        		</li>
                 {{#if gallery}}
                 <li class="menu-item">
                     {{#isolate}}
@@ -32,12 +27,6 @@
                     {{/isolate}}
                 </li>
                 {{/if}}
-                <!--<li  class="menu-item coming-soon">
-                    <a href="/createAlbum">
-                        <i class="icon-images"></i>
-                        Créer un album
-                    </a>
-                </li>-->
         		<li class="menu-item">
         			<a href="/addPicture" class="mt-upload-link" title="Envoi de photos">
         				<i class="icon-plus"></i>

@@ -43,7 +43,6 @@ Meteor.startup(function(){
         cursorborderradius: 0,
         cursorwidth: 10,
         scrollspeed : 100,
-        touchbehavior : true,
         boxzoom: false,
         vertical: true,
         horizrailenabled: false,
@@ -53,7 +52,4 @@ Meteor.startup(function(){
 
 Accounts.config({
     sendVerificationEmail: false
-});
-Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_ONLY'
 });
