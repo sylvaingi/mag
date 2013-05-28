@@ -19,6 +19,8 @@ MAG.Pictures.addPicture = function(name, hash, galleryId){
         name: name,
         hash: hash,
         galleryId: galleryId,
-        createdAt: new Date(), starred: 0
+        createdAt: new Date(),
+        starred: 0,
+        starredBy: []
     });
 };

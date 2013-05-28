@@ -14,6 +14,6 @@ Template.galleryThumb.helpers({
     },
 
     sample: function(){
-        return MAG.Pictures.findOne({galleryId: this._id}, {sort: {createdAt: 1}});
+        return MAG.Pictures.findOne({galleryId: this._id}, {sort: {starred: -1}});
     }
 });

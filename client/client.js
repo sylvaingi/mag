@@ -11,7 +11,7 @@ Meteor.Router.add({
     "/addPicture": function(){
         if(!Meteor.userId()){
             Meteor.defer(function(){
-                alert("Veuillez vous connecter via le bouton \"Sign in\"");
+                alert("Veuillez vous connecter au préalable");
                 Meteor.Router.to("/");
             });
         }
@@ -25,9 +25,6 @@ Meteor.Router.add({
         }
         var gallery = MAG.Galleries.findOne({_id: id});
         Session.set("currentGallery", gallery);
-
-        var user = Meteor.users.findOne({_id: gallery.userId});
-        Session.set("currentGalleryCreator", user);
 
         return "gallery";
     },

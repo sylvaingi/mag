@@ -1,5 +1,6 @@
 <template name="photoOverlay">
-    <div id="mt-photo-overlay" style="display:none;">
+    {{#if photo}}
+    <div id="mt-photo-overlay">
     	<div class="close-overlay">
     		<i class="icon-fullscreen-exit-alt"></i>
     	</div>
@@ -7,30 +8,45 @@
             <div class="overlay-picture">{{picture photo 1000}}</div>
 
             <div class="overlay-nav-gallery">
+                {{#if previousPhoto}}
                 <button class="prev">
                     <i class="icon-arrow-left"></i>
                 </button>
+                {{/if}}
+                {{#if nextPhoto}}
                 <button class="next">
                     <i class="icon-arrow-right"></i>
                 </button>
+                {{/if}}
             </div>
-
-            <div class="overlay-picture-options">
-            	<ul>
-            		<li class="overlay-options-item coming-soon">
-            			<a href="#">
-            				<i class="icon-thumbs-up"></i>
-            				j'aime<span class="coming-info">(Bient&ocirc;t disponible)</span>
-            			</a>
-            		</li>
-					<li class="overlay-options-item coming-soon">
-						<a href="#">
-							<i class="icon-cloud-download"></i>
-							télécharger la photo<span class="coming-info">(Bient&ocirc;t disponible)</span>
-						</a>
-					</li>
-            	</ul>
-            </div>
+            {{> photoOverlayBar photo}}
         </div>
+    </div>
+    {{/if}}
+</template>
+
+<template name="photoOverlayBar">
+    <div class="overlay-picture-options">
+        <ul>
+            <li class="overlay-options-item">
+                {{#if hasStarred}}
+                <a href="#" class="unstar">
+                    <i class="icon-thumbs-up"></i>
+                    Je n'aime plus ({{this.starred}})
+                </a>
+                {{else}}
+                <a href="#" class="star">
+                    <i class="icon-thumbs-up"></i>
+                    J'aime ({{this.starred}})
+                </a>
+                {{/if}}
+            </li>
+            <li class="overlay-options-item coming-soon">
+                <a href="#">
+                    <i class="icon-cloud-download"></i>
+                    télécharger la photo<span class="coming-info">(Bient&ocirc;t disponible)</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </template>
