@@ -1,14 +1,14 @@
 Template.photoOverlay.helpers({
     "photo": function(){
-        return MAG.Pictures.findOne({_id: Session.get("currentPhotoId")});
+        return Session.get("currentPhoto");
     },
 
     "nextPhoto": function(){
-        return Session.get("nextPhotoId");
+        return Session.get("nextPhoto");
     },
 
     "previousPhoto": function(){
-        return Session.get("previousPhotoId");
+        return Session.get("previousPhoto");
     }
 });
 
@@ -31,8 +31,6 @@ Template.photoOverlay.events({
     }
 });
 
-Template.photoOverlay.preserve([".mt-photo-overlay-content"]);
-
 Template.photoOverlayBar.helpers({
     "hasStarred": function(){
         return MAG.Pictures.hasStarred(Session.get("currentPhotoId"), Meteor.userId());
@@ -54,11 +52,13 @@ Template.photoOverlayBar.events({
 var overlayActive = false;
 
 function nextPhoto(){
-    Session.set("currentPhotoId", Session.get("nextPhotoId"));
+    var p = Session.get("nextPhoto");
+    Session.set("currentPhotoId", p ? p._id : null );
 }
 
 function previousPhoto(){
-    Session.set("currentPhotoId", Session.get("previousPhotoId"));
+    var p = Session.get("previousPhoto");
+    Session.set("currentPhotoId", p ? p._id : null );
 }
 
 $(document).on("keydown", function(event){
@@ -73,13 +73,16 @@ $(document).on("keydown", function(event){
 });
 
 Deps.autorun(function () {
-    var photo = Session.get("currentPhotoId");
-    if(photo){
+    var photoId = Session.get("currentPhotoId");
+    if(photoId){
         overlayActive = true;
-        Session.set("nextPhotoId", MAG.Pictures.pictureAfter(photo));
-        Session.set("previousPhotoId", MAG.Pictures.pictureBefore(photo));
+        var photo = MAG.Pictures.findOne({_id: photoId});
+        Session.set("currentPhoto", photo);
+        Session.set("nextPhoto", MAG.Pictures.pictureAfter(photo));
+        Session.set("previousPhoto", MAG.Pictures.pictureBefore(photo));
     }
     else {
         overlayActive = false;
+        Session.set("currentPhoto", null);
     }
 });
