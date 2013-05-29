@@ -1,4 +1,4 @@
-.mt-album {
+.album {
     position: relative;
     float: left;
     width: 200px;
@@ -13,7 +13,7 @@
     &:hover {
         background: $primary;
 
-        .mt-album-over {
+        .album-over {
             display: block;
             opacity: 1;
             @include box-shadow(inset 0 0 0 1px $blackLight);
@@ -21,7 +21,7 @@
     }
 }
 
-.mt-album-thumb, .mt-photo-thumb {
+.album-thumb, .photo-thumb {
     position: relative;
     width: 100%;
     height: 200px;
@@ -32,12 +32,12 @@
     }
 }
 
-.mt-album-count {
+.album-count {
     height: 18px;
     text-align: center;
 }
 
-.mt-album-name {
+.album-name {
     height: 40px;
     padding: 5px;
     text-align: center;
@@ -47,7 +47,7 @@
         line-height: 18px;
         color: $secondary;
 
-        &.mt-photo-counter {
+        &.photo-counter {
             font-size: 11px;
             font-style: italic;
             color: $blackLight;
@@ -55,7 +55,7 @@
     }
 }
 
-.mt-album-over {
+.album-over {
     display: none;
     position: absolute;
     top: 0;
@@ -67,7 +67,7 @@
     opacity: 0;
 }
 
-.mt-album-over-circle {
+.album-over-circle {
     $width: 60px;
     $height: 60px;
 

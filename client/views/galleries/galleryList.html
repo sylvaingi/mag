@@ -1,5 +1,5 @@
 <template name="galleryList">
-    <ul class="mt-album-gallery">
+    <ul class="album-gallery">
         {{> bestOfGalleryThumb}}
         {{#each galleries}}
             {{> galleryThumb}}
@@ -8,18 +8,18 @@
 </template>
 
 <template name="bestOfGalleryThumb">
-     <li class="mt-album">
+     <li class="album">
         <a href="/{{_id}}">
             {{#isolate}}
-            <div class="mt-album-thumb">
+            <div class="album-thumb">
                 {{picture sample 300}}
             </div>
             {{/isolate}}
-            <div class="mt-album-name">
+            <div class="album-name">
                 <p>Photos favorites</p>
             </div>
-            <div class="mt-album-over">
-                <div class="mt-album-over-circle">
+            <div class="album-over">
+                <div class="album-over-circle">
                     <i class="icon-eye"></i>
                 </div>
             </div>
@@ -28,21 +28,21 @@
 </template>
 
 <template name="galleryThumb">
-     <li class="mt-album">
+     <li class="album">
         <a href="/{{_id}}">
             {{#isolate}}
-            <div class="mt-album-thumb">
+            <div class="album-thumb">
                 {{picture sample 300}}
             </div>
             {{/isolate}}
             {{#isolate}}
-            <div class="mt-album-name">
+            <div class="album-name">
                 <p>{{creator}}</p>
-                <p class="mt-photo-counter">{{size}} photos</p>
+                <p class="photo-counter">{{size}} photos</p>
             </div>
             {{/isolate}}
-            <div class="mt-album-over">
-                <div class="mt-album-over-circle">
+            <div class="album-over">
+                <div class="album-over-circle">
                     <i class="icon-eye"></i>
                 </div>
             </div>

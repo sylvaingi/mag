@@ -1,4 +1,4 @@
-.mt-photo {
+.photo {
     position: relative;
     float: left;
     width: 200px;
@@ -8,7 +8,7 @@
     &:hover {
         cursor: pointer;
 
-        .mt-photo-thumb-over {
+        .photo-thumb-over {
             display: block;
             opacity: 1;
             @include box-shadow(inset 0 0 0 1px $blackLight);
@@ -16,15 +16,15 @@
     }
 }
 
-.mt-photo-thumb {
+.photo-thumb {
     position: relative;
     height: 100%;
 }
 
-.mt-photo-thumb-over {
-    @extend .mt-album-over;
+.photo-thumb-over {
+    @extend .album-over;
 }
 
-.mt-photo-thumb-circle {
-    @extend .mt-album-over-circle;
+.photo-thumb-circle {
+    @extend .album-over-circle;
 }

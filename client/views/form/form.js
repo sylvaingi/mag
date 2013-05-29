@@ -5,9 +5,9 @@ Template.form.created = function(){
 };
 
 Template.form.events({
-  "click #mt-upload-zone": function(event,template){
+  "click #upload-zone": function(event,template){
     event.preventDefault();
-    template.find("#mt-upload-files").click();
+    template.find("#upload-files").click();
   },
 
   "change" : function (event, template) {
@@ -18,16 +18,16 @@ Template.form.events({
 
   "drop": function(event, template){
     event.preventDefault();
-    $("#mt-upload-zone").removeClass("drag-hover");
+    $("#upload-zone").removeClass("drag-hover");
     uploadPictures(event.dataTransfer.files, uploadToken());
   },
 
   "dragenter": function(event){
-    $("#mt-upload-zone").addClass("drag-hover");
+    $("#upload-zone").addClass("drag-hover");
   },
 
   "dragleave": function(event){
-    $("#mt-upload-zone").removeClass("drag-hover");
+    $("#upload-zone").removeClass("drag-hover");
   },
 
   "dragover": function(event){
@@ -58,9 +58,9 @@ function uploadPictures(files, uploadToken){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/upload', true);
 
-    var $uZone = $("#mt-upload-zone").hide();
-    var $uProg = $("#mt-upload-progress").show();
-    var $uProgPercent = $("#mt-upload-progress-percent").text(0);
+    var $uZone = $("#upload-zone").hide();
+    var $uProg = $("#upload-progress").show();
+    var $uProgPercent = $("#upload-progress-percent").text(0);
 
     xhr.upload.onprogress = function(e) {
       if (e.lengthComputable) {

@@ -1,3 +1,14 @@
+Template.photoOverlay.rendered = function(){
+    var img = this.find("img");
+    if(!img){
+        return;
+    }
+
+    var imgWidth = img.width;
+    var imgHeight = img.height;
+
+};
+
 Template.photoOverlay.helpers({
     "photo": function(){
         return MAG.Pictures.findOne({_id: Session.get("currentPhotoId")});
@@ -13,7 +24,6 @@ Template.photoOverlay.helpers({
 });
 
 Template.photoOverlay.events({
-
     "click .prev": function(){
         previousPhoto();
     },
@@ -22,11 +32,11 @@ Template.photoOverlay.events({
         nextPhoto();
     },
 
-    "click .mt-photo-overlay-content": function(event){
+    "click .photo-overlay-content": function(event){
         event.stopPropagation();
     },
 
-    "click #mt-photo-overlay": function(){
+    "click #photo-overlay": function(){
         Session.set("currentPhotoId", null);
     }
 });

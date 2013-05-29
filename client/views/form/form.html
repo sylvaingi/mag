@@ -1,19 +1,19 @@
 <template name="form">
-    <div class="mt-upload-content">
+    <div class="upload-content">
         <form action="#">
             {{#isolate}}
             <input id="upload-token" name="upload_token" type="hidden" value="{{currentUser.uploadToken}}">
             {{/isolate}}
-            <input id="mt-upload-files" name="files" type="file" required accept="image/*" multiple style="display:none;">
+            <input id="upload-files" name="files" type="file" required accept="image/*" multiple style="display:none;">
         </form>
 
-        <div id="mt-upload-zone">
+        <div id="upload-zone">
             <h2>Cliquez ou déposez vos photos ici (100 Mo max.)</h2>
         </div>
 
-        <div id="mt-upload-progress" style="display:none;">
+        <div id="upload-progress" style="display:none;">
             <h2>Veuillez patienter...</h2>
-            <p><span id="mt-upload-progress-percent">0</span>/100% envoyés</p>
+            <p><span id="upload-progress-percent">0</span>/100% envoyés</p>
         </div>
     </div>
 </template>
