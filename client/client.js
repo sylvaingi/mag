@@ -24,7 +24,7 @@ Meteor.Router.add({
             return;
         }
 
-        Session.set("currentGalleryId", gallery);
+        Session.set("currentGalleryId", id);
 
         return "gallery";
     },

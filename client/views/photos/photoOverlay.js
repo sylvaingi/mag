@@ -1,14 +1,14 @@
 Template.photoOverlay.helpers({
     "photo": function(){
-        return Session.get("currentPhoto");
+        return MAG.Pictures.findOne({_id: Session.get("currentPhotoId")});
     },
 
-    "nextPhoto": function(){
-        return Session.get("nextPhoto");
+    "nextPhotoId": function(){
+        return Session.get("nextPhotoId");
     },
 
-    "previousPhoto": function(){
-        return Session.get("previousPhoto");
+    "previousPhotoId": function(){
+        return Session.get("previousPhotoId");
     }
 });
 
@@ -52,13 +52,17 @@ Template.photoOverlayBar.events({
 var overlayActive = false;
 
 function nextPhoto(){
-    var p = Session.get("nextPhoto");
-    Session.set("currentPhotoId", p ? p._id : null );
+    var id = Session.get("nextPhotoId");
+    if(id){
+        Session.set("currentPhotoId", id);
+    }
 }
 
 function previousPhoto(){
-    var p = Session.get("previousPhoto");
-    Session.set("currentPhotoId", p ? p._id : null );
+    var id = Session.get("previousPhotoId");
+    if(id){
+        Session.set("currentPhotoId", id);
+    }
 }
 
 $(document).on("keydown", function(event){
@@ -76,13 +80,13 @@ Deps.autorun(function () {
     var photoId = Session.get("currentPhotoId");
     if(photoId){
         overlayActive = true;
-        var photo = MAG.Pictures.findOne({_id: photoId});
-        Session.set("currentPhoto", photo);
-        Session.set("nextPhoto", MAG.Pictures.pictureAfter(photo));
-        Session.set("previousPhoto", MAG.Pictures.pictureBefore(photo));
+        var order = Session.get("currentGalleryOrder");
+
+        var idx = _.indexOf(order, photoId);
+        Session.set("nextPhotoId", order[idx+1]);
+        Session.set("previousPhotoId", order[idx-1]);
     }
     else {
         overlayActive = false;
-        Session.set("currentPhoto", null);
     }
 });

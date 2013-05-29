@@ -1,5 +1,7 @@
 Template.gallery.helpers({
     photos: function(){
-        return MAG.Pictures.find({galleryId: Session.get("currentGalleryId")}, {sort: {createdAt: 1}});
+        var photos = MAG.Pictures.find({galleryId: Session.get("currentGalleryId")}, {sort: {createdAt: 1}}).fetch();
+        Session.set("currentGalleryOrder", _.pluck(photos, "_id"));
+        return photos;
     }
 });
