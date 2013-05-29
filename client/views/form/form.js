@@ -1,5 +1,5 @@
 Template.form.created = function(){
-  if(!"FormData"in window){
+  if(!("FormData"in window)){
     alert("L'envoi d'images n'est pas supporté par votre navigateur.\nVeuillez réessayer avec un navigateur moderne, Google Chrome par exemple :)");
   }
 };

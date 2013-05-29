@@ -23,8 +23,8 @@ Meteor.Router.add({
         if(!gHandle.ready()){
             return;
         }
-        var gallery = MAG.Galleries.findOne({_id: id});
-        Session.set("currentGallery", gallery);
+
+        Session.set("currentGalleryId", gallery);
 
         return "gallery";
     },
