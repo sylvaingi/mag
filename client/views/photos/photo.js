@@ -3,5 +3,3 @@ Template.photo.events({
         Session.set("currentPhotoId", this._id);
     }
 });
-
-Template.photo.preserve(['.mt-photo']);

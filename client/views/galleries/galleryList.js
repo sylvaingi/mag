@@ -4,6 +4,16 @@ Template.galleryList.helpers({
     }
 });
 
+Template.bestOfGalleryThumb.helpers({
+    _id: function(){
+        return MAG.bestOfGalleryId;
+    },
+
+    sample: function(){
+        return MAG.Pictures.findOne({}, {sort: {starred: -1}});
+    }
+});
+
 Template.galleryThumb.helpers({
     creator: function(){
         return Meteor.users.findOne({_id: this.userId}).profile.name;

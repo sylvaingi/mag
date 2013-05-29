@@ -1,17 +1,40 @@
 <template name="galleryList">
     <ul class="mt-album-gallery">
+        {{> bestOfGalleryThumb}}
         {{#each galleries}}
             {{> galleryThumb}}
         {{/each}}
     </ul>
 </template>
 
-<template name="galleryThumb">
+<template name="bestOfGalleryThumb">
      <li class="mt-album">
         <a href="/{{_id}}">
+            {{#isolate}}
             <div class="mt-album-thumb">
                 {{picture sample 300}}
             </div>
+            {{/isolate}}
+            <div class="mt-album-name">
+                <p>Photos favorites</p>
+            </div>
+            <div class="mt-album-over">
+                <div class="mt-album-over-circle">
+                    <i class="icon-eye"></i>
+                </div>
+            </div>
+        </a>
+    </li>
+</template>
+
+<template name="galleryThumb">
+     <li class="mt-album">
+        <a href="/{{_id}}">
+            {{#isolate}}
+            <div class="mt-album-thumb">
+                {{picture sample 300}}
+            </div>
+            {{/isolate}}
             {{#isolate}}
             <div class="mt-album-name">
                 <p>{{creator}}</p>
