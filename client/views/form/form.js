@@ -40,11 +40,19 @@ function uploadToken(){
 }
 
 function uploadPictures(files, uploadToken){
+    var uploadSize = 0;
     var formData = new FormData();
 
     _.each(files, function(file, index){
+      uploadSize += file.size;
       formData.append("file-"+index, file);
     });
+
+    if(uploadSize > 104857600){
+      alert("Veuillez n'envoyer pas plus de 100 Mo de photos a la fois.\nRéessayez avec moins de photos.");
+      return;
+    }
+
     formData.append("upload_token", uploadToken);
 
     var xhr = new XMLHttpRequest();
