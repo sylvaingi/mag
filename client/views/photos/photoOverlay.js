@@ -1,14 +1,3 @@
-Template.photoOverlay.rendered = function(){
-    var img = this.find("img");
-    if(!img){
-        return;
-    }
-
-    var imgWidth = img.width;
-    var imgHeight = img.height;
-
-};
-
 Template.photoOverlay.helpers({
     "photo": function(){
         return MAG.Pictures.findOne({_id: Session.get("currentPhotoId")});
@@ -24,6 +13,39 @@ Template.photoOverlay.helpers({
 });
 
 Template.photoOverlay.events({
+    "load .overlay-content>img": function(event){
+        var img = event.target;
+
+        var maxW = $("body").width() - 100;
+        var maxH = $("body").height() - 100;
+        var tW = maxW;
+        var tH = maxH;
+
+        var imgW = img.width;
+        var imgH = img.height;
+        var r = imgW / imgH;
+
+        //landscape
+        if(r > 1){
+            tW = maxW;
+            tH = tW / r;
+        }
+        //portrait
+        else {
+            tH = maxH;
+            tW = tH * r;
+        }
+
+        $(".overlay-content").css({
+            width: tW + "px",
+            height: tH + "px",
+            top: "50%",
+            left: "50%",
+            "margin-top": -(tH/2) + "px",
+            "margin-left": -(tW/2) + "px"
+        });
+    },
+
     "click .prev": function(){
         previousPhoto();
     },
@@ -32,11 +54,11 @@ Template.photoOverlay.events({
         nextPhoto();
     },
 
-    "click .photo-overlay-content": function(event){
+    "click .overlay-content": function(event){
         event.stopPropagation();
     },
 
-    "click #photo-overlay": function(){
+    "click #overlay": function(){
         Session.set("currentPhotoId", null);
     }
 });
