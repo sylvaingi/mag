@@ -9,8 +9,8 @@ accounts-facebook
 accounts-twitter
 accounts-google
 random
-router
 HTML5-History-API
+router
 glob
 imagemagick
 accounts-password
