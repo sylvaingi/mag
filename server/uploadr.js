@@ -1,13 +1,6 @@
 var fs = Npm.require("fs");
 var Future = Npm.require("fibers/future");
 
-Meteor.Router.configure({
-  bodyParser: {
-    uploadDir: MAG.uploadsFolder,
-    hash: "sha1"
-  }
-});
-
 Meteor.Router.add('/upload', function() {
   var files = this.request.files;
   var uploadToken = this.request.body.upload_token;

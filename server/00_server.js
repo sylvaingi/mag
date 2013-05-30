@@ -1,5 +1,12 @@
 MAG.uploadsFolder = "./uploads";
 
+Meteor.Router.configure({
+  bodyParser: {
+    uploadDir: MAG.uploadsFolder,
+    hash: "sha1"
+  }
+});
+
 Meteor.startup(function(){
     var fs = Npm.require('fs');
 
