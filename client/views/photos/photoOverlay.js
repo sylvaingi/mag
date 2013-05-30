@@ -25,8 +25,8 @@ Template.photoOverlay.events({
         var imgH = img.height;
         var r = imgW / imgH;
 
-        //landscape
-        if(r > 1){
+        //landscape ok
+        if(r > 1 && (tW / r) < maxH){
             tW = maxW;
             tH = tW / r;
         }
