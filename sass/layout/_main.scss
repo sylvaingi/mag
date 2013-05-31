@@ -67,3 +67,11 @@ button {
 .clearfix {
     *zoom: 1;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-1;
+}
